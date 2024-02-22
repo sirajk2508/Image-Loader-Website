@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  color: #374155;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: rgb(31 41 55);
+  margin: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+.heading::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 2px;
+  background-color: #04f9b8;
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+}
+
+img {
+  width: 16rem;
+  height: 17rem;
+  border-radius: 0.75rem;
+}
+
+#imageContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.doctor-card {
+  margin: 10px 15px;
+  padding: 10px 5px;
+  background-color: rgb(242, 244, 247);
+  border-radius: 0.75rem;
+  transition: background-color 0.2s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.doctor-card:not(:first-child):hover {
+  background-color: #04f9b8;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  cursor: pointer;
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.doctor-card:first-child {
+  background-color: #04f9b8;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  cursor: pointer;
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.doctor-card > .doctor-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.doctor-card > .doctor-specialty {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+@media screen and (max-width: 768px) {
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  img {
+    width: 13rem;
+    height: 14rem;
+  }
+  .doctor-card > .doctor-name {
+    font-size: 1.2rem;
+  }
+
+  .doctor-card > .doctor-specialty {
+    font-size: 1rem;
+  }
+}
+
+
+
+#preloader {
+  background-color: #000;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.75s, visibility 0.75s;
+}
+
+.preloader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#preloader::after {
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 15px solid #ddd;
+  border-top-color: #009578;
+  border-radius: 50%;
+  animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+  from { transform: rotate(0turn); }
+  to { transform: rotate(1turn); }
+}
